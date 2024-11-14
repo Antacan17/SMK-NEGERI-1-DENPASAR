@@ -1,0 +1,343 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #007bff;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: sticky; /* Stick the navbar to the top */
+    top: 0;
+    width: 97%; /* Full width */
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    opacity: 0;
+    animation: slideIn 1.0s ease-out forwards; /* Smooth slide-in */
+}
+
+/* Navbar animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navbar link styles */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Fade-in animation for menu items */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Smooth slide from left */
+    }
+}
+
+/* Delayed animations for each link */
+.navbar a:nth-child(1) {
+    animation-delay: 0.3s;
+}
+.navbar a:nth-child(2) {
+    animation-delay: 0.5s;
+}
+.navbar a:nth-child(3) {
+    animation-delay: 0.7s;
+}
+.navbar a:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+/* Hover effect on navbar links */
+.navbar a:hover {
+    color: #f0f0f0;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Smaller underline effect on hover */
+.navbar a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ffcc00;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::before {
+    width: 80%;
+    margin-left: 10px;
+}
+
+/* Logo styles */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo:hover img {
+    transform: rotate(5deg);
+    transition: transform 0.4s ease;
+}
+
+/* Menu container styles */
+.navbar .menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navbar container hover effect */
+.navbar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.header .text {
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.header .text h1 {
+    font-size: 48px;
+    margin: 0;
+    animation: slideIn 1s forwards;
+}
+
+.header .text h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    animation: slideIn 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.header .text h3 {
+    font-size: 18px;
+    margin: 0;
+    animation: slideIn 1s forwards;
+    animation-delay: 1s;
+}
+marquee {
+    background-color: #242222;
+    height: 10px;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    margin-top: -5px;
+}
+
+.teks-kepala {
+    font-size: 7px;
+    margin-top: -37px;
+    margin-left: -522px
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    animation: fadeIn 1s ease-out forwards; /* Fade-in effect */
+    margin-top: 30px;
+}
+
+/* Animation for Image and Content */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px); /* Slight movement from left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Styling for the Image Section */
+.image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.image img {
+    width: 50%; /* Make image responsive */
+    height: 80%;
+    border-radius: 5px;
+    border: 1px solid #000;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+}
+
+.image img:hover {
+    transform: scale(1.05); /* Zoom-in effect */
+}
+
+/* Styling for Content Section */
+.content {
+    flex: 2;
+    animation: contentFadeIn 1s ease-out forwards;
+    animation-delay: 0.2s; /* Slight delay */
+}
+
+@keyframes contentFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content h1 {
+    font-size: 28px;
+    margin: 0;
+    color: #000000;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.content h2 {
+    font-size: 17px;
+    margin-top: 35px;
+    margin-left: -240px;
+}
+
+.divider {
+    border: none;
+    height: 2px;
+    background-color: #3498db; /* Warna biru */
+    margin: 20px 0;
+    width: 50%; /* Membuat divider lebih kecil */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Menambahkan efek hover pada divider */
+  .divider:hover {
+    background-color: #2980b9; /* Warna biru lebih gelap */
+    cursor: pointer;
+  }
+
+.brt-terkini {
+    font-size: 12px;
+    margin-left: 580px;
+}  
+
+.news-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    animation: newsFadeIn 1s ease-out forwards; /* Fade-in effect for news section */
+}
+
+@keyframes newsFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.news-item {
+    width: 25%;
+    background-color: #fff;
+    border: 2px solid #9c9898;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    margin-left: 6px;
+}
+
+.news-item:hover {
+    transform: translateY(-10px); /* Lift effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.news-item img {
+    width: 85%;
+    height: 55%;
+    border-radius: 7px;
+    transition: transform 0.3s ease; /* Smooth zoom effect on image */
+}
+
+.news-item img:hover {
+    transform: scale(1.1); /* Slight zoom-in effect */
+}
+
+.news-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.news-item h3:hover {
+    color: #007bff; /* Highlight color */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.news-item p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.news-item .date {
+    font-size: 12px;
+    color: #999;
+} 
